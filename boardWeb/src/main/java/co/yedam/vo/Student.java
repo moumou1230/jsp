@@ -10,7 +10,7 @@ import lombok.Data;
 //@Getter
 //@Setter
 //@ToString
-@Data //getter setter tostring 한번에 다됨.
+@Data //getter setter tostring �븳踰덉뿉 �떎�맖.
 public class Student {
 	private String stdNo;
 	private String stdName;
