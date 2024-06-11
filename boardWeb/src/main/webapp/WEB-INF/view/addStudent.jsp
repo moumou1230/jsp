@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판 첫페이지입니다.</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h3>hello, world</h3>
-		<a href = "public/main.jsp">main 페이지로 이동</a>
+
 </body>
 </html>
