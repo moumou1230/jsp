@@ -11,11 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.web.AddBoard;
 import co.yedam.web.AddStudent;
+import co.yedam.web.BoardForm;
 import co.yedam.web.BoardList;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.StudentForm;
+import co.yedam.web.UpdateFrom;
 
 // front -> 요청url(*.do) - 실행 컨트롤러 매칭
 // main.do -> FrontController -> /WEB_INF/public/main.jsp
@@ -37,7 +40,13 @@ public class FrontController extends HttpServlet{
 		
 		//게시글 목록
 		map.put("/boardList.do", new BoardList());
-	}
+		//게시글 작성
+		map.put("/boardForm.do", new BoardForm());
+		map.put("/addBoard.do", new AddBoard());
+		
+		//게시글 수정
+		map.put("updateForm.do", new UpdateFrom());
+		}
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

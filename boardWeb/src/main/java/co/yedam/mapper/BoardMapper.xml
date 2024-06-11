@@ -9,5 +9,11 @@
 		from tbl_board
 		order by board_no
 	</select>
-	
+	<insert id="insertBoard" parameterType="co.yedam.vo.BoardVO">
+		insert into tbl_board(board_no, title, content, writer)
+		values (board_seq.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	<update id="updateBoard" parameterType="co.yedam.vo.BoardVO">
+		update
+	</update>
 </mapper>

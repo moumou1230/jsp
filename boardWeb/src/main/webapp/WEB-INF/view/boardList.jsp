@@ -13,7 +13,7 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>글번호</th><th>제목</th><th>작성자</th><th>조회수</th>
+			<th>글번호</th><th>제목</th><th>작성자</th><th>조회수</th><th>작성일</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,8 +23,13 @@
 			<td><%=vo.getTitle() %></td>
 			<td><%=vo.getWriter() %></td>
 			<td><%=vo.getClickCnt() %></td>
+			<td><%=vo.getCreationDate() %></td>
+			<td><input type = "button" value = "수정" onclick = "location.href = 'updateForm.do'"></td>
 		</tr>
 		<%} %>
+		<tr>
+			<td colspan = "2"><input type = "button" value = "작성" onclick = "location.href = 'boardForm.do'"></td>
+		</tr>
 	</tbody>
 </table>
 

@@ -29,7 +29,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public boolean addBoard(BoardVO bvo) {
 		// TODO Auto-generated method stub
-		return false;
+		return mapper.insertBoard(bvo) == 1;
 	}
 
 	@Override
