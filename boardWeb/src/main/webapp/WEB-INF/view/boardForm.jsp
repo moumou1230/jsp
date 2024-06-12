@@ -9,11 +9,11 @@
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td><input type = "text" name = "bcontent"></td>
+				<td><textarea  name = "bcontent"></textarea></td>
 			</tr>
 			<tr>
 				<th>작성자</th>
-				<td><input type = "text" name = "bwriter"></td>
+				<td><input name = "bwriter"></td>
 			</tr>
 			<tr>
 				<td colspan = "2"><input type = "submit" value = "작성완료"></td>

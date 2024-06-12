@@ -15,10 +15,12 @@ import co.yedam.web.AddBoard;
 import co.yedam.web.AddStudent;
 import co.yedam.web.BoardForm;
 import co.yedam.web.BoardList;
+import co.yedam.web.GetBoard;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.StudentForm;
-import co.yedam.web.UpdateFrom;
+import co.yedam.web.UpdateBoard;
+import co.yedam.web.UpdateForm;
 
 // front -> 요청url(*.do) - 실행 컨트롤러 매칭
 // main.do -> FrontController -> /WEB_INF/public/main.jsp
@@ -40,12 +42,15 @@ public class FrontController extends HttpServlet{
 		
 		//게시글 목록
 		map.put("/boardList.do", new BoardList());
+		//상세화면
+		map.put("/getBoard.do", new GetBoard());
 		//게시글 작성
 		map.put("/boardForm.do", new BoardForm());
 		map.put("/addBoard.do", new AddBoard());
 		
 		//게시글 수정
-		map.put("updateForm.do", new UpdateFrom());
+		map.put("/updateForm.do", new UpdateForm());
+		map.put("/updateBoard.do", new UpdateBoard());
 		}
 	
 	@Override

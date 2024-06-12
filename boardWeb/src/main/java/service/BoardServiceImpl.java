@@ -15,27 +15,31 @@ public class BoardServiceImpl implements BoardService{
 	
 	BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 	@Override
-	public List<BoardVO> boardList() {
+	public List<BoardVO> boardList(int page) {
 		//mapper에 등록된 기능활용
-		return mapper.boardList();
+		return mapper.boardListpaging(page);
 	}
 
 	@Override
+	public int boardTotal() {
+
+		return mapper.getTotalCnt();
+	}
+	
+	@Override
 	public BoardVO getBoard(int bno) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectBoard(bno);
 	}
 
 	@Override
 	public boolean addBoard(BoardVO bvo) {
-		// TODO Auto-generated method stub
 		return mapper.insertBoard(bvo) == 1;
 	}
 
 	@Override
 	public boolean editBoard(BoardVO bvo) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return mapper.updateBoard(bvo)==1;
 	}
 
 	@Override
