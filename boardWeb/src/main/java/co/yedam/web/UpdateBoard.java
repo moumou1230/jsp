@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.common.PageDTO;
 import co.yedam.vo.BoardVO;
 import service.BoardService;
 import service.BoardServiceImpl;
@@ -19,21 +20,21 @@ public class UpdateBoard implements Control {
 		String no = req.getParameter("bno");
 		String title = req.getParameter("uTitle");
 		String content = req.getParameter("uContent");
+		String page = req.getParameter("page");
 		
 		BoardService bsv = new BoardServiceImpl();
 		BoardVO board = new BoardVO();
 		board.setBoardNo(Integer.parseInt(no));
-		System.out.println(no);
 		board.setTitle(title);
-		System.out.println(title);
 		board.setContent(content);
+		
 		
 		if(bsv.editBoard(board)) {
 			System.out.println("수정완료");
-			resp.sendRedirect("boardList.do");
+			resp.sendRedirect("boardList.do?page="+page);
 		}else {
 			System.out.println("수정에 실패하였습니다.");
-			resp.sendRedirect("boardList.do");
+			resp.sendRedirect("boardList.do?page="+page);
 //			req.getRequestDispatcher("WEB-INF/view/boardList.jsp").forward(req, resp);
 		}
 	}

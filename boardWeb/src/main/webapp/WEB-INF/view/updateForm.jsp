@@ -1,29 +1,29 @@
-<%@page import="co.yedam.vo.BoardVO"%>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="../public/header.jsp"%>
+<jsp:include page="../public/header.jsp"/>
 	
-<%
-	SimpleDateFormat sdf = new SimpleDateFormat();
-	BoardVO board = (BoardVO) request.getAttribute("board");
-	String yyyymmdd = sdf.format(board.getCreationDate());
-%>
-
 <form action = "updateBoard.do">
-	<table>
+	<input type="hidden" value = "${board.boardNo }" name="bno">
+	<input type="hidden" value = "${page }" name="page">
+	<table class = "table">
+		<tr>
+			<th>글번호</th>
+			<td colspan = "3"><input type = "text" name = "bno"  value ="${board.boardNo }" readonly></td>
+		</tr>
 		<tr>
 			<th>제목</th>
-			<td><input type = "text" name = "uTitle"  value ="<%=board.getTitle() %>"></td>
+			<td colspan = "3"><input  type = "text" name = "uTitle"  value ="${board.title }"></td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td><input type = "text" name = "uContent" value ="<%=board.getContent() %>"></td>
+			<td colspan = "3"><textarea name = "uContent" cols="80" rows="3" >${board.content }</textarea></td>
 		</tr>
 		<tr>
-			<td><input type = "submit" value = "수정완료"></td>
+			<td><input class="btn btn-warning" type = "submit" value = "수정완료"></td>
 		</tr>
 	</table>
 </form>
-
-<%@include file="../public/footer.jsp"%>
+<script>
+	
+</script>
+<jsp:include page="../public/footer.jsp"/>

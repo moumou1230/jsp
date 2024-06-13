@@ -15,7 +15,12 @@ import co.yedam.web.AddBoard;
 import co.yedam.web.AddStudent;
 import co.yedam.web.BoardForm;
 import co.yedam.web.BoardList;
+import co.yedam.web.DeleteBoard;
+import co.yedam.web.DeleteForm;
 import co.yedam.web.GetBoard;
+import co.yedam.web.LoginControl;
+import co.yedam.web.LoginForm;
+import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.StudentForm;
@@ -51,7 +56,19 @@ public class FrontController extends HttpServlet{
 		//게시글 수정
 		map.put("/updateForm.do", new UpdateForm());
 		map.put("/updateBoard.do", new UpdateBoard());
+		
+		//게시글 삭제
+		map.put("/deleteForm.do", new DeleteForm());
+		map.put("/deleteBoard.do", new DeleteBoard());
+		
+		//로그인
+		map.put("/loginForm.do", new LoginForm());
+		map.put("/login.do", new LoginControl());
+		
+		//로그아웃
+		map.put("/logout.do", new LogoutControl());
 		}
+		
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

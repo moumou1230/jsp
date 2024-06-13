@@ -44,8 +44,21 @@
 	
 	<update id="updateBoard" parameterType="co.yedam.vo.BoardVO">
 		update tbl_board 
-		set title=decode(#{title},null,title,#{title}),
-		    content=decode(#{content},null,content,#{content}) 
-		where board_no = #{baordNo}
+		set title = #{title},
+		    content= #{content}
+		where board_no = #{boardNo}
 	</update>
+	
+	<delete id="deleteBoard" parameterType="co.yedam.vo.BoardVO">
+		delete from tbl_board
+		where board_no = #{boardNo}
+	</delete>
+	
+	<select id = "selectMember" resultType="int">
+		select count(1)
+		from tbl_member
+		where user_id = #{id}
+		and   user_pw = #{pw}	
+	</select>
+	
 </mapper>

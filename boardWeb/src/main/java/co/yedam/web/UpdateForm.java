@@ -16,10 +16,12 @@ public class UpdateForm implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String bno = req.getParameter("bno");
+		String page = req.getParameter("page");
 		
 		BoardService svc = new BoardServiceImpl();
 		BoardVO brd = svc.getBoard(Integer.parseInt(bno));
 		
+		req.setAttribute("page", page);
 		req.setAttribute("board", brd);
 		
 		req.getRequestDispatcher("WEB-INF/view/updateForm.jsp").forward(req, resp);
