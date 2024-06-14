@@ -44,7 +44,7 @@ public class AddStudent implements Control {
 		}else {
 			System.out.println("등록이 실패하였습니다.");
 			req.setAttribute("message", "처리중 오류가 발생.");
-			req.getRequestDispatcher("WEB-INF/view/studentForm.jsp").forward(req, resp);
+			req.getRequestDispatcher("board/studentForm.tiles").forward(req, resp);
 		}
 		
 

@@ -17,15 +17,18 @@ public class DeleteForm implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String no = req.getParameter("bno");
 		String page = req.getParameter("page");
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
 		
 		BoardService bsv = new BoardServiceImpl();
 		BoardVO bvo = bsv.getBoard(Integer.parseInt(no));
 		
-		
+		req.setAttribute("searchCondition", sc);
+		req.setAttribute("keyword", kw);
 		req.setAttribute("page", page);
 		req.setAttribute("board", bvo);
 		
-		req.getRequestDispatcher("WEB-INF/view/deleteForm.jsp").forward(req, resp);
+		req.getRequestDispatcher("board/deleteForm.tiles").forward(req, resp);
 
 	}
 

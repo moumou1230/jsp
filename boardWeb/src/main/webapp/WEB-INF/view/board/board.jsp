@@ -2,12 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<jsp:include page="../public/header.jsp" />
 
 <p>${board }</p>
 
 <form name="myFrm">
 	<input type="hidden" value="${board.boardNo }" name="bno">
+	<input type="hidden" value="${page }" name="page">
+	<input type="hidden" value="${searchCondition }" name="searchCondition">
+	<input type="hidden" value="${keyword }" name="keyword">
+
 	<table class="table table-sm">
 		<tr>
 			<th class="col-sm-1">글번호</th>
@@ -38,22 +41,22 @@
 				<c:choose>
 					<c:when test="${!empty logId && logId == board.writer }">
 					<button type="button" class="btn btn-warning"
-					onclick="location.href='updateForm.do?bno=${board.boardNo }&page=${page }'">수정</button>
+					onclick="location.href='updateForm.do?bno=${board.boardNo }&page=${page }&searchCondition=${searchCondition }&keyword=${keyword }'">수정</button>
 	
 					<button type="button" class="btn btn-danger" onclick="remove()">삭제</button>
 					
 					<button type="button" class="btn btn-danger"
-					onclick="location.href = 'deleteForm.do?bno=${board.boardNo }]&page=${page }'">삭제처리</button>
+					onclick="location.href = 'deleteForm.do?bno=${board.boardNo }]&page=${page }&searchCondition=${searchCondition }&keyword=${keyword }'">삭제처리</button>
 					</c:when>
 					
 					<c:otherwise>
 					<button type="button" disabled class="btn btn-warning"
-					onclick="location.href='updateForm.do?bno=${board.boardNo }&page=${page }'">수정</button>
+					onclick="location.href='updateForm.do?bno=${board.boardNo }&page=${page }&searchCondition=${searchCondition }&keyword=${keyword }'">수정</button>
 					
 					<button type="button" disabled class="btn btn-danger" onclick="remove()">삭제</button>
 					
 					<button type="button" disabled class="btn btn-danger"
-					onclick="location.href = 'deleteForm.do?bno=${board.boardNo }&page=${page }'">삭제처리</button>
+					onclick="location.href = 'deleteForm.do?bno=${board.boardNo }&page=${page }&searchCondition=${searchCondition }&keyword=${keyword }'">삭제처리</button>
 					</c:otherwise>
 				</c:choose>	
 			</td>
@@ -70,7 +73,7 @@
 	//})
 	function remove(){
 		if(confirm("삭제하시겠습니까?")){
-			location.href='deleteBoard.do?bno=${board.boardNo }&page=${page }';
+			location.href='deleteBoard.do?bno=${board.boardNo }&page=${page }&searchCondition=${searchCondition }&keyword=${keyword }';
 			alert('삭제완료');
 
 		} else {
@@ -79,4 +82,3 @@
 	}
 </script>
 <a href="boardList.do?page=${page }">목록으로 이동하기</a>
-<jsp:include page="../public/footer.jsp" />

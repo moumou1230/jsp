@@ -17,14 +17,18 @@ public class UpdateForm implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String bno = req.getParameter("bno");
 		String page = req.getParameter("page");
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
 		
 		BoardService svc = new BoardServiceImpl();
 		BoardVO brd = svc.getBoard(Integer.parseInt(bno));
 		
 		req.setAttribute("page", page);
 		req.setAttribute("board", brd);
+		req.setAttribute("searchCondition", sc);
+		req.setAttribute("keyword", kw);
 		
-		req.getRequestDispatcher("WEB-INF/view/updateForm.jsp").forward(req, resp);
+		req.getRequestDispatcher("board/updateForm.tiles").forward(req, resp);
 
 	}
 

@@ -32,7 +32,7 @@ public class AddBoard implements Control {
 			resp.sendRedirect("boardList.do");
 		}else {
 			System.out.println("작성에 실패하였습니다.");
-			req.getRequestDispatcher("WEB-INF/view/addBoard.jsp").forward(req, resp);
+			req.getRequestDispatcher("board/addBoard.tiles").forward(req, resp);
 		}
 
 	}

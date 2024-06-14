@@ -34,7 +34,7 @@ public class MainControl implements Control{
 		req.setAttribute("student", student);
 		req.setAttribute("studentList", list);
 		
-		req.getRequestDispatcher("WEB-INF/public/main.jsp")
+		req.getRequestDispatcher("member/main.tiles")
 				.forward(req, resp); // 매개값으로 이동할 페이지를 넣어주면됨
 		
 	}

@@ -3,12 +3,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"prefix="fmt" %>
-<jsp:include page="../public/header.jsp"/>
+<!--<jsp:include page="../public/header.jsp"/>-->
 
 <form name = "myFrm">
 	<input type="hidden" value = "${board.boardNo }" name="bno">
 	<input type="hidden" value = "${page }" name="page">
-	<table class="table table-sm">
+	<input type="hidden" value="${searchCondition }" name = "searchCondition">
+	<input type="hidden" value="${keyword }" name = "keyword">
+ 	<table class="table table-sm">
 		<tr>
 			<th class="col-sm-1">글번호</th>
 			<td class="col-sm-3">${board.boardNo }</td>
@@ -35,7 +37,7 @@
 		<tr>
 			<td>
 				<button type="button"  class="btn btn-warning"
-				 onclick="location.href='updateForm.do?bno=${board.boardNo }&page=${page }'">수정</button>
+				 onclick="location.href='boardList.do?bno=${board.boardNo }&page=${page }&searchCondition=${searchCondition }&keyword=${keyword }'">뒤로</button>
 				 
 				 <button type="button" class="btn btn-danger" onclick="remove()">삭제</button>
 			</td>
@@ -53,5 +55,4 @@
 		}			
 	}
 </script>
-<a href="boardList.do?page=${page }">목록으로 이동하기</a>
-<jsp:include page="../public/footer.jsp"/>
+<a href="boardList.do?page=${page }&searchCondition=${searchCondition }&keyword=${keyword }">목록으로 이동하기</a>

@@ -21,6 +21,9 @@ public class UpdateBoard implements Control {
 		String title = req.getParameter("uTitle");
 		String content = req.getParameter("uContent");
 		String page = req.getParameter("page");
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
+		
 		
 		BoardService bsv = new BoardServiceImpl();
 		BoardVO board = new BoardVO();
@@ -31,7 +34,7 @@ public class UpdateBoard implements Control {
 		
 		if(bsv.editBoard(board)) {
 			System.out.println("수정완료");
-			resp.sendRedirect("boardList.do?page="+page);
+			resp.sendRedirect("boardList.do?page="+page+"&searchCondition="+sc+"&keyword="+kw);
 		}else {
 			System.out.println("수정에 실패하였습니다.");
 			resp.sendRedirect("boardList.do?page="+page);

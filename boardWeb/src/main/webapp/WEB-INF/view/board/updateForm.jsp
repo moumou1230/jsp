@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:include page="../public/header.jsp"/>
 	
 <form action = "updateBoard.do">
 	<input type="hidden" value = "${board.boardNo }" name="bno">
 	<input type="hidden" value = "${page }" name="page">
+	<input type="hidden" value="${searchCondition }" name="searchCondition">
+	<input type="hidden" value="${keyword }" name="keyword">
 	<table class = "table">
 		<tr>
 			<th>글번호</th>
@@ -26,4 +27,3 @@
 <script>
 	
 </script>
-<jsp:include page="../public/footer.jsp"/>

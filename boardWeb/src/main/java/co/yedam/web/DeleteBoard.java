@@ -17,12 +17,14 @@ public class DeleteBoard implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String no = req.getParameter("bno");
 		int page= Integer.parseInt(req.getParameter("page"));
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
 		
 		BoardService bsv = new BoardServiceImpl();
 		
 		if(bsv.removeBoard(Integer.parseInt(no))) {
 			System.out.println("삭제 성공");
-			resp.sendRedirect("boardList.do?page=" + page);
+			resp.sendRedirect("boardList.do?page="+page+"&searchCondition="+sc+"&keyword="+kw);
 		}else {
 			System.out.println("삭제실패");
 			resp.sendRedirect("boardList.do");

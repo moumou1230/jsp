@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="myTag" %>
 
-<jsp:include page="../public/header.jsp"/>
+
 
 <h3>로그인 화면</h3>
 <myTag:line/>
@@ -33,4 +33,3 @@
 </form>
 
 
-<jsp:include page="../public/footer.jsp"/>
