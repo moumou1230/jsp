@@ -17,4 +17,6 @@ public interface BoardService {
 	
 	//checkMember(id.pw)
 	boolean checkMember(String id, String pw);
+	
+	boolean insertMember(String name, String id, String pw);
 }

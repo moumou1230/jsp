@@ -51,4 +51,10 @@ public class BoardServiceImpl implements BoardService{
 	public boolean checkMember(String id, String pw) {
 		return mapper.selectMember(id, pw) == 1;
 	}
+	
+	@Override
+	public boolean insertMember(String name, String id, String pw) {
+		// TODO Auto-generated method stub
+		return mapper.createMember(name, id, pw) == 1;
+	}
 }
