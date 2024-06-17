@@ -24,7 +24,9 @@ import co.yedam.web.LoginForm;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.MemberForm;
+import co.yedam.web.MemberList;
 import co.yedam.web.ProductControl;
+import co.yedam.web.ScriptForm;
 import co.yedam.web.StudentForm;
 import co.yedam.web.UpdateBoard;
 import co.yedam.web.UpdateForm;
@@ -74,6 +76,11 @@ public class FrontController extends HttpServlet{
 		map.put("/memberForm.do", new MemberForm());
 		map.put("/createMember.do", new CreateMember());
 		
+		//회원목록(관리자 템플릿)
+		map.put("/memberList.do", new MemberList());
+		
+		//자바스크립트 연습용 페이지
+		map.put("/script.do", new ScriptForm());
 		}
 		
 	

@@ -18,6 +18,6 @@
 	        
 	         
 	         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="memberForm.do">회원가입</a>
-	         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+	         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="script.do">스크립트</a>
 	     </div>
  </div>

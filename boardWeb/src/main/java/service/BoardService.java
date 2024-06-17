@@ -6,6 +6,7 @@ import java.util.List;
 
 import co.yedam.common.SearchVO;
 import co.yedam.vo.BoardVO;
+import co.yedam.vo.MemberVO;
 
 public interface BoardService {
 	List<BoardVO> boardList(SearchVO search);
@@ -16,7 +17,7 @@ public interface BoardService {
 	boolean removeBoard(int bno);
 	
 	//checkMember(id.pw)
-	boolean checkMember(String id, String pw);
+	MemberVO checkMember(String id, String pw);
 	
 	boolean insertMember(String name, String id, String pw);
 }
