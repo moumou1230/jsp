@@ -13,10 +13,11 @@ let evenSum = function(elem, idx, ary){
 		}
 	};
 
+
 let oddSum = function(elem, idx, ary){
 	console.log(elem,idx,ary);
 	if(idx %2 == 0){
-		result +=elem;
+		result += elem;
 		}
 	};
 	
@@ -29,7 +30,7 @@ let less35 = function(elem, idx, ary){
 
 numAry.forEach(evenSum);//매개값으로 함수가 들어옴
 console.log('작수합은 ', result);
-
+result = 0;
 numAry.forEach(oddSum);//매개값으로 함수가 들어옴
 console.log('홀수번째 값의 합은 ', result);
 

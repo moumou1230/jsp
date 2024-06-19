@@ -23,9 +23,9 @@ public class CreateMember implements Control {
 		BoardService svc = new BoardServiceImpl();
 		MemberVO member = new MemberVO();
 		
-		member.setName(name);
-		member.setId(id);
-		member.setPw(pw);
+		member.setUserName(name);
+		member.setUserId(id);
+		member.setUserPw(pw);
 		
 		if(svc.insertMember(name, id, pw)) {
 			System.out.println("회원가입 성공");

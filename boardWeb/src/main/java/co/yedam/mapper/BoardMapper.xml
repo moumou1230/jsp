@@ -85,11 +85,45 @@
 	<select id = "selectMember" resultType="co.yedam.vo.MemberVO">
 		select *
 		from tbl_member
-		where user_id = #{id}
-		and   user_pw = #{pw}	
+		where user_id = #{userId}
+		and   user_pw = #{userPw}	
 	</select>
 	<insert id = "createMember" parameterType="co.yedam.vo.MemberVO">
 		insert into tbl_member( user_name, user_id, user_pw)
-		values (#{name},#{id},#{pw})
+		values (#{userName},#{userId},#{userPw})
 	</insert>
+	
+	<select id = "memberList" resultType="co.yedam.vo.MemberVO">
+		select * 
+		from tbl_member
+	</select>
+	
+	<insert id="insertMemberAjax" parameterType="co.yedam.vo.MemberVO">
+		insert into tbl_member (user_id, user_pw, user_name, responsibility)
+		values (#{userId}, #{userPw}, #{userName}, #{responsibility})
+	</insert>
+	
+	<select id="selectMemberAjax"  resultType="int">
+		select count(1)
+		from tbl_member
+		where user_id = #{userId}
+	</select>
+	
+	<delete id="delMemberAjax" parameterType="co.yedam.vo.MemberVO">
+		delete from tbl_member
+		where user_id = #{userId}
+		and user_pw = #{userPw}
+	</delete>
+	
+	<delete id="delMemberAjax2" parameterType="co.yedam.vo.MemberVO">
+		delete from tbl_member
+		where user_id = #{userId}
+	</delete>
+	
+	<update id="updateMemberAjax" parameterType="co.yedam.vo.MemberVO">
+		update tbl_member
+		set user_name = #{userName}
+			user_pw = #{userPw},
+		where user_id = #{userId}
+	</update>
 </mapper>

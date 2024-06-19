@@ -76,6 +76,7 @@
 			<th>사번</th>
 			<th>이름(firstname)</th>
 			<th>이메일</th>
+			<th>급여</th>
 		</tr>
 	</thead>
 	<tbody id="list"></tbody>
