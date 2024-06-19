@@ -122,8 +122,8 @@
 	
 	<update id="updateMemberAjax" parameterType="co.yedam.vo.MemberVO">
 		update tbl_member
-		set user_name = #{userName}
-			user_pw = #{userPw},
+		set user_name = #{userName},
+			user_pw = #{userPw}
 		where user_id = #{userId}
 	</update>
 </mapper>

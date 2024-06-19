@@ -87,7 +87,13 @@ document.querySelector('#modBtn').addEventListener('click', function(){
 	updateAjax.open('get','updateMemberAjax.do?id='+id+'&name='+name+'&pw='+pw);
 	updateAjax.send();
 	updateAjax.onload = function(){
+		let result = JSON.parse(updateAjax.responseText);
 		
+		if(result.retCode == 'Success'){
+			alert('수정완료');
+		}else{
+			alert('수정실패');
+		}
 	}
 	
 	
