@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
 import co.yedam.web.AddBoard;
+import co.yedam.web.AddReply;
 import co.yedam.web.AddStudent;
 import co.yedam.web.AjaxForm;
 import co.yedam.web.BoardForm;
@@ -32,6 +33,8 @@ import co.yedam.web.MemberAjax;
 import co.yedam.web.MemberForm;
 import co.yedam.web.MemberList;
 import co.yedam.web.ProductControl;
+import co.yedam.web.RemoveReply;
+import co.yedam.web.ReplyList;
 import co.yedam.web.ScriptForm;
 import co.yedam.web.StudentForm;
 import co.yedam.web.UpdateBoard;
@@ -104,6 +107,11 @@ public class FrontController extends HttpServlet{
 		
 		//업데이트
 		map.put("/updateMemberAjax.do", new UpdateMemberAjax());
+		
+		//댓글관련
+		map.put("/replyListJson.do", new ReplyList());
+		map.put("/removeReply.do", new RemoveReply());
+		map.put("/addReply.do",	new AddReply());
 		}
 		
 	

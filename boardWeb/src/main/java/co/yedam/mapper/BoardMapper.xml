@@ -85,12 +85,12 @@
 	<select id = "selectMember" resultType="co.yedam.vo.MemberVO">
 		select *
 		from tbl_member
-		where user_id = #{userId}
-		and   user_pw = #{userPw}	
+		where user_id = #{id}
+		and   user_pw = #{pw}	
 	</select>
 	<insert id = "createMember" parameterType="co.yedam.vo.MemberVO">
-		insert into tbl_member( user_name, user_id, user_pw)
-		values (#{userName},#{userId},#{userPw})
+		insert into tbl_member(user_name,user_id,user_pw)
+		values (#{name},#{id},#{pw})
 	</insert>
 	
 	<select id = "memberList" resultType="co.yedam.vo.MemberVO">
