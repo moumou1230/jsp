@@ -21,11 +21,15 @@ public class ReplyList implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		resp.setContentType("text/json;charset=utf-8");
+		
 		String bno = req.getParameter("bno");
+		String page = req.getParameter("page");
+		
+		page = page == null ? "1" : page;
 		
 		//댓글 목록
 		ReplyService svc = new ReplyServiceImpl();
-		List<ReplyVO> list = svc.replyList(Integer.parseInt(bno));
+		List<ReplyVO> list = svc.replyList(Integer.parseInt(bno), Integer.parseInt(page));
 		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create(); //gson객체 생성
 		String json = gson.toJson(list);//객체를 문자열로 변환

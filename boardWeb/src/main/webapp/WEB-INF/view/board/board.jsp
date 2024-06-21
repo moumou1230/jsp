@@ -17,8 +17,41 @@
 	div.reply span{
 		display: inline-block;
 	}
-	
 </style>
+<style>
+.center {
+	text-align: center;
+}
+
+.pagination {
+	display: inline-block;
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: 1px solid #ddd;
+	margin: 0 4px;
+}
+
+.pagination a.active {
+	background-color: #4CAF50;
+	color: white;
+	border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
+
+a {
+	text-decoration-line: none;
+}
+</style>
+
 <p>${board }</p>
 
 <form name="myFrm">
@@ -106,6 +139,17 @@
 				<span class = "col-sm-1"><button onclick = "deleteRow(event)">삭제</button></span>
 			</li>
 		</ul>
+	</div>
+	
+	<div class = "footer">
+		<div class = "center">
+			<div class= "pagination">
+				<a href="#">1</a>
+				<a href="#" class = "active">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+			</div>
+		</div>
 	</div>
 </div>
 <!--  댓글관련 종료 -->

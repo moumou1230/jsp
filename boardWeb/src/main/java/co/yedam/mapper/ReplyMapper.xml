@@ -14,6 +14,18 @@
 		where board_no = #{boardNo}
 		order by 1 desc
 	</select>
+	
+	<select id="selectListPaging" >
+		select b.*
+		from (select /*+index_desc(r reply_pk)*/rownum rn, r.* 
+		      from tbl_reply r
+		      where board_no = #{boardNo}) b
+		<![CDATA[
+		where b.rn <= #{page} * 5
+		]]>
+		and   b.rn > (#{page}-1) *5
+	</select>
+	
 	<select id="selectReply" parameterType="int" resultType="co.yedam.vo.ReplyVO">
 		select reply_no, 
 			   reply,
@@ -36,4 +48,10 @@
 		delete from tbl_reply
 		where reply_no = #{replyNo}
 	</delete>
+	
+	<select id="selectReplyCnt">
+		select count(1)
+		from tbl_reply
+		where board_no = #{bno}
+	</select>
 </mapper>
