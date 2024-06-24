@@ -19,7 +19,10 @@ public interface BoardService {
 	//checkMember(id.pw)
 	MemberVO checkMember(String id, String pw);
 	
-	boolean insertMember(String name, String id, String pw);
+	boolean insertMember(MemberVO mvo);
+	
+	//파일첨부 회원등록
+	boolean addMemberImage(MemberVO mvo);
 	
 	List<MemberVO> memberList();
 	

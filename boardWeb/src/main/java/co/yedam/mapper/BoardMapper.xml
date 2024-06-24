@@ -89,8 +89,8 @@
 		and   user_pw = #{pw}	
 	</select>
 	<insert id = "createMember" parameterType="co.yedam.vo.MemberVO">
-		insert into tbl_member(user_name,user_id,user_pw)
-		values (#{name},#{id},#{pw})
+		insert into tbl_member(user_name,user_id,user_pw,image)
+		values (#{name},#{id},#{pw},#{image})
 	</insert>
 	
 	<select id = "memberList" resultType="co.yedam.vo.MemberVO">

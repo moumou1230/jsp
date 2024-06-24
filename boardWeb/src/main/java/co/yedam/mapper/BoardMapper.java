@@ -22,7 +22,7 @@ public interface BoardMapper {
 	MemberVO selectMember(@Param("id") String id, @Param("pw") String pw);
 	
 	//회원가입
-	int createMember(@Param("name") String name,@Param("id") String id, @Param("pw") String pw);
+	int createMember(MemberVO mvo);
 	
 	List<MemberVO> memberList();
 	

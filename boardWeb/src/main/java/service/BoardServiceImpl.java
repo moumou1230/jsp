@@ -54,8 +54,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
-	public boolean insertMember(String name, String id, String pw) {
-		return mapper.createMember(name, id, pw) == 1;
+	public boolean insertMember(MemberVO mvo) {
+		return mapper.createMember(mvo) == 1;
 	}
 	@Override
 	public List<MemberVO> memberList() {
@@ -83,5 +83,9 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public boolean updateMember(MemberVO mvo) {
 		return mapper.updateMemberAjax(mvo) == 1;
+	}
+	@Override
+	public boolean addMemberImage(MemberVO mvo) {
+		return mapper.createMember(mvo) == 1;
 	}
 }

@@ -120,6 +120,9 @@ to {
 		<td><button id="addBtn">등록</button></td>
 		<td><button id="delBtn">삭제</button></td>
 	</tr>
+	<tr>
+		<th>파일</th><td><input class ="form-control" type ="file" id = "myPic"></td>
+	</tr>
 </table>
 <div id="show">
 	<table class="table">
@@ -131,6 +134,7 @@ to {
 				<th>권한</th>
 				<th>삭제</th>
 			</tr>
+			
 		</thead>
 		<tbody id="list">
 		</tbody>
@@ -161,6 +165,7 @@ to {
 			<h3>Modal Footer</h3>
 		</div>
 	</div>
+	
 
 </div>
 <script>

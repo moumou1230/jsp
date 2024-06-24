@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>Promise객체</p>
+	<script>
+	async function promiseFunc(){
+		new Promise((resolve, reject) =>{
+			setTimeout(function(){
+				resolve('Fail');
+			}, 1000);
+		});
+		
+	promise
+		.then(function(rseult){
+			console.log(result);
+		})//성공하면
+		
+		.then(function(){})
+		
+		.catch(function(err){
+			console.log('err : ', err);
+		});//실패하면
+	}
+	
+	promiseFunc()
+	</script>
+</body>
+</html>
